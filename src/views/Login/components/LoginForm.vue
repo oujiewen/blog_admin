@@ -24,11 +24,17 @@
 
 <script>
     import { defineComponent } from 'vue';
+    import axios from 'axios'
 
     export default defineComponent({
     name: 'LoginForm',
     methods:{
         login:function(){
+            this.$http.get('/test/blog/getHotArticl/',{
+
+            }).then((response)=>{
+                alert(response.data)
+            })
             alert('login.....')
         }
     }
